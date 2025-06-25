@@ -1,6 +1,13 @@
 # Kanban de Tarefas
 
-## ✨ Visão Geral
+## Como rodar?
+---
+- npm install
+- npm start
+- Para acessar, basta ingressar em http://localhost:4200
+
+
+## Visão Geral
 Este projeto consiste em um sistema Kanban para gerenciamento de tarefas, desenvolvido utilizando Angular standalone components. A aplicação possui funcionalidades como:
 
 - Criação e edição de tarefas
@@ -10,7 +17,7 @@ Este projeto consiste em um sistema Kanban para gerenciamento de tarefas, desenv
 
 ---
 
-## 🎨 Decisões de Design - Baseado em Notion
+## Decisões de Design - Baseado em Notion
 As decisões de design foram documentadas e organizadas no Notion para garantir alinhamento e consistência no projeto. Os principais pontos foram:
 
 - **Minimalismo visual**: foco na simplicidade, fundo escuro para destacar cards
@@ -22,7 +29,7 @@ As decisões de design foram documentadas e organizadas no Notion para garantir 
 
 ---
 
-## 🚀 Processo de Desenvolvimento
+## Processo de Desenvolvimento
 
 1. **Criação do projeto Angular standalone** com divisão clara entre lógica (component) e apresentação (template e CSS)
 2. **Implementação das colunas dinâmicas** baseadas em tipos de tarefas (`todo` e `done`)
@@ -32,7 +39,7 @@ As decisões de design foram documentadas e organizadas no Notion para garantir 
 
 ---
 
-## ⚡ Dificuldades Encontradas
+## Dificuldades Encontradas
 
 - **Scroll das listas**: inicialmente, o scroll vertical não funcionava corretamente quando havia muitas tarefas. A solução foi aplicar `max-height` e `overflow-y: auto` diretamente nas listas.
 - **Feedback no drag**: não estava claro onde soltar a tarefa. Foi criada uma classe `hover-target` aplicada dinamicamente na lista de destino.
@@ -41,7 +48,7 @@ As decisões de design foram documentadas e organizadas no Notion para garantir 
 
 ---
 
-## 📄 Conclusão
+## Conclusão
 Este projeto demonstrou um fluxo completo de criação de um mini sistema Kanban com foco em usabilidade e boas práticas de frontend. A documentação no Notion foi essencial para manter a clareza do design e das funcionalidades.
 
 
