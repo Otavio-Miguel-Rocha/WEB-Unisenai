@@ -9,9 +9,6 @@ import { AddIconComponent } from "./components/add-icon/add-icon.component";
 import { Task } from '../types/task.type';
 import { TaskService } from './services/task.service';
 
-// ✅ FIXED drag-and-drop between columns (lists)
-// Drag events must include dataTransfer to ensure drag state is retained
-
 @Component({
   selector: 'app-root',
   standalone: true,
