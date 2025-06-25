@@ -1,27 +1,53 @@
-# TaskManager
+# Kanban de Tarefas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.4.
+## ✨ Visão Geral
+Este projeto consiste em um sistema Kanban para gerenciamento de tarefas, desenvolvido utilizando Angular standalone components. A aplicação possui funcionalidades como:
 
-## Development server
+- Criação e edição de tarefas
+- Arrastar e soltar tarefas entre colunas
+- Interface responsiva com scroll horizontal e vertical
+- Feedback visual para instruir o usuário durante o drag-and-drop
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🎨 Decisões de Design - Baseado em Notion
+As decisões de design foram documentadas e organizadas no Notion para garantir alinhamento e consistência no projeto. Os principais pontos foram:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Minimalismo visual**: foco na simplicidade, fundo escuro para destacar cards
+- **Design modular**: componentes reutilizáveis como `card-task`, `modal`, `icons`
+- **Feedback ao usuário**: animações e instruções visuais ao arrastar tarefas
+- **Responsividade**: suporte a rolagem vertical nas listas e horizontal no board
 
-## Build
+> A identidade visual segue o padrão definido no Notion, com cores em RGBA para permitir transparências sutis e destacar elementos com sombreamento.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🚀 Processo de Desenvolvimento
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. **Criação do projeto Angular standalone** com divisão clara entre lógica (component) e apresentação (template e CSS)
+2. **Implementação das colunas dinâmicas** baseadas em tipos de tarefas (`todo` e `done`)
+3. **Drag and Drop**: lógica personalizada utilizando `dragstart`, `dragover` e `drop`, com destaque visual ao passar sobre a coluna
+4. **Scroll interno nas listas**: para suportar grande volume de tarefas sem comprometer a interface
+5. **Modal de criação e edição** com `ngModel` e validação leve
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## ⚡ Dificuldades Encontradas
 
-## Further help
+- **Scroll das listas**: inicialmente, o scroll vertical não funcionava corretamente quando havia muitas tarefas. A solução foi aplicar `max-height` e `overflow-y: auto` diretamente nas listas.
+- **Feedback no drag**: não estava claro onde soltar a tarefa. Foi criada uma classe `hover-target` aplicada dinamicamente na lista de destino.
+- **Estilo condicional por estado**: garantir que os estilos de destaque só aparecessem na lista correta exigiu o uso de `ngClass` e controle por variável `draggingOverType`.
+- **Performance com animações**: ajustes finos em `transition` para evitar travamentos ao mover tarefas rapidamente.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 📄 Conclusão
+Este projeto demonstrou um fluxo completo de criação de um mini sistema Kanban com foco em usabilidade e boas práticas de frontend. A documentação no Notion foi essencial para manter a clareza do design e das funcionalidades.
+
+
+---
+
+Se desejar continuar esse projeto, recomenda-se:
+- Persistir as tarefas via backend/API
+- Adicionar login por usuário
+- Melhorar acessibilidade (atalhos e contraste)
